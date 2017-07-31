@@ -39,12 +39,17 @@ void distance()
     {
       //code for actuating cyliner downwards 
       b++;
-      if(b== 10)
-        break;
       if(b-a == 5)
       {
         dir=1;
         a=b-3;
+      }
+      
+      if(b == 10)
+      {
+        dir=1;
+        reset(b);
+        return;
       }
     }
     if(analogRead(A0)>900 && dir==1)
@@ -59,6 +64,15 @@ void distance()
   }
 }
 
+void reset(int x)
+{
+  while(x!=0)
+  {
+    if(analogRead(A0)>900)
+      x--;
+  }
+  return;
+}
 
 
 /* DONT CARE
