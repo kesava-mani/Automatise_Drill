@@ -56,7 +56,7 @@ void distance()
     {
       //code for actuating cylinder upwards
       b--;
-      if(a == b-3)
+      if(a == b)
       {
         dir=0;
       }
